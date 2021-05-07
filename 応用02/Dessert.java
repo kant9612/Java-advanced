@@ -37,4 +37,4 @@ public enum Dessert {
 		Dessert.ICE_CREAM.advertise();
 		Dessert.CAKE.advertise();
 	}
-}
+}2
