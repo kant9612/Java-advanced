@@ -2,6 +2,7 @@ package ouyou07;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Fruit {
 	public String name;
@@ -36,10 +37,18 @@ public class Fruit {
 			.sorted((f1, f2) -> f1.quantity - f2.quantity)
 			.forEach(System.out::println);
 
+		//確認問題1
 		long count = fruits.stream()
 			.filter(f -> f.quantity <= 10)
 			.count();
 
 		System.out.println(count);
+
+		//確認問題2
+		List<Fruit> sortedFruits = fruits.stream()
+			.sorted((f1, f2) -> f2.quantity - f1.quantity)
+			.collect(Collectors.toList());
+
+		System.out.println(sortedFruits);
 	}
 }
