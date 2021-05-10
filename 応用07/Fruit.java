@@ -35,5 +35,11 @@ public class Fruit {
 			.map(f -> f.order(20))
 			.sorted((f1, f2) -> f1.quantity - f2.quantity)
 			.forEach(System.out::println);
+
+		long count = fruits.stream()
+			.filter(f -> f.quantity <= 10)
+			.count();
+
+		System.out.println(count);
 	}
 }
